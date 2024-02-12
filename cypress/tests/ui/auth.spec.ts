@@ -112,7 +112,32 @@ describe("User Sign-up and Login", function () {
   });
 
   it("should allow a visitor to sign-up, login, and logout", function () {
-    // The following line is meant to fail the test on purpose. You can remove it and update accordingly
-    cy.get("#fail-on-purpose").should("exist");
+
+    cy.visit("/signup");
+    cy.getBySel("signup-first-name").type("Jane");
+    cy.getBySel("signup-last-name").type("Doe");
+    cy.getBySel("signup-username").type("janedoe");
+    cy.getBySel("signup-password").type("s3cret");
+    cy.getBySel("signup-confirmPassword").type("s3cret");
+    cy.getBySel("signup-submit").click();
+
+    cy.location("pathname").should("equal", "/signin");
+    cy.visualSnapshot("Redirect to SignIn");
+
+    cy.getBySel("signin-username").type("janedoe");
+    cy.getBySel("signin-password").type("s3cret");
+    cy.getBySel("signin-submit").click();
+
+    cy.location("pathname").should("equal", "/");
+    cy.visualSnapshot("Redirect to Home");
+   
+    if (isMobile()) {
+      cy.getBySel("sidenav-toggle").click();
+    }
+    cy.getBySel("sidenav-signout").click();
+    cy.location("pathname").should("eq", "/signin");
+    cy.visualSnapshot("Redirect to SignIn");
+   
   });
 });
+

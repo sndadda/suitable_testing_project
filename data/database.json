@@ -74,6 +74,17 @@
       "balance": 75369,
       "createdAt": "2020-02-11T21:26:46.510Z",
       "modifiedAt": "2020-05-21T15:15:33.944Z"
+    },
+    {
+      "id": "Wqh0HTNNp",
+      "uuid": "f5a9746c-6fc8-4510-8170-313198780003",
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "username": "janedoe",
+      "password": "$2a$10$rGrFNv0kP09kOdjZn8hlyewfG6tqn6SZflNuPDvUMAVDC2JgtjiK2",
+      "balance": 0,
+      "createdAt": "2024-02-12T19:37:21.712Z",
+      "modifiedAt": "2024-02-12T19:37:21.712Z"
     }
   ],
   "contacts": [
